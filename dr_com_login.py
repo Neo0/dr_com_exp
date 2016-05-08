@@ -47,5 +47,5 @@ def wifi_login():
 	# print 'success!'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',debug=False,port=3000)
+    app.run(host='0.0.0.0',debug=False,port=80)
 
