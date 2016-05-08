@@ -10,15 +10,6 @@ url = '192.168.168.168'
 
 
 app = Flask(__name__)
-
-
-@app.route('/')
-def wifi_login():
-	url = '192.168.168.168'
-	onePwd = '034069'
-	userid = '101002013030200'
-	login(url,userid,onePwd)
-	return 'wifi Login success!'
 	
 
 def login(url,userid,passw):
@@ -41,7 +32,14 @@ def login(url,userid,passw):
 		return status[id]
 
 
-
+@app.route('/')
+def wifi_login():
+	url = '192.168.168.168'
+	onePwd = '034069'
+	userid = '101002013030200'
+	login(url,userid,onePwd)
+	return 'wifi Login success!'
+	
 
 # net_status = os.system('ping git.neo0.xyz')
 # if net_status:
@@ -49,5 +47,5 @@ def login(url,userid,passw):
 	# print 'success!'
 
 if __name__ == '__main__':
-    app.run(port=80)
+    app.run(debug=False,port=80)
 
