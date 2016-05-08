@@ -3,9 +3,22 @@
 import urllib,httplib
 from BeautifulSoup import BeautifulSoup
 import re
+import os
+from flask import Flask
 
 url = '192.168.168.168'
 
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def wifi_login():
+	onePwd = '034069'
+	userid = '101002013030200'
+    if login(url,userid,onePwd):
+		return 'wifi Login success!'
+	
 
 def login(url,userid,passw):
 	print passw
@@ -28,8 +41,12 @@ def login(url,userid,passw):
 
 
 
-onePwd = '034069'
-userid = '101002013030200'
-if login(url,userid,onePwd):
-	print 'success!'
+
+# net_status = os.system('ping git.neo0.xyz')
+# if net_status:
+# if login(url,userid,onePwd):
+	# print 'success!'
+
+if __name__ == '__main__':
+    app.run(port=80)
 
