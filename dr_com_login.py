@@ -28,8 +28,8 @@ def login(url,userid,passw):
 
 
 
-onePwd = 
-userid = 
+onePwd = '034069'
+userid = '101002013030200'
 if login(url,userid,onePwd):
 	print 'success!'
 
