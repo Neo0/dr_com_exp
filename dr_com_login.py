@@ -14,10 +14,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def wifi_login():
+	url = '192.168.168.168'
 	onePwd = '034069'
 	userid = '101002013030200'
-    if login(url,userid,onePwd):
-		return 'wifi Login success!'
+	login(url,userid,onePwd)
+	return 'wifi Login success!'
 	
 
 def login(url,userid,passw):
